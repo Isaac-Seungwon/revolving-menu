@@ -20,8 +20,8 @@ public class RatingData {
 			String line = null;
 			while ((line = reader.readLine()) != null) {
 				String[] temp = line.split(",");
-				Rating rating = new Rating(temp[0], temp[1], temp[2], temp[3], temp[4]);
-				RatingData.list.add(rating);
+				Rating review = new Rating(temp[0], temp[1], temp[2], temp[3], temp[4]);
+				RatingData.list.add(review);
 			}
 
 			reader.close();
@@ -35,9 +35,9 @@ public class RatingData {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\storeReview.txt"));
 
-			for (Rating Rating : RatingData.list) {
-				writer.write(String.format("%s,%s,%s,%s,%s\r\n", Rating.getNo(), Rating.getMemberNo(),
-						Rating.getStoreNo(), Rating.getReview(), Rating.getScore()));
+			for (Rating review : RatingData.list) {
+				writer.write(String.format("%s,%s,%s,%s,%s\r\n", review.getNo(), review.getMemberNo(),
+						review.getStoreNo(), review.getReview(), review.getScore()));
 			}
 
 			writer.close();

@@ -38,9 +38,9 @@ public class MenuData {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\Menu.txt"));
 
-			for (Menu Menu : MenuData.list) {
-				writer.write(String.format("%s,%s,%s,%s,%s\r\n", Menu.getNo(), Menu.getName(), Menu.getCategoryNo(),
-						Menu.getSeasonNo(), Menu.getPrice()));
+			for (Menu menu : MenuData.list) {
+				writer.write(String.format("%s,%s,%s,%s,%s\r\n", menu.getNo(), menu.getName(), menu.getCategoryNo(),
+						menu.getSeasonNo(), menu.getPrice()));
 			}
 
 			writer.close();

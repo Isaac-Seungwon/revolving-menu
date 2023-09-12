@@ -1,12 +1,12 @@
 package com.revolving;
 
-import com.revolving.data.MemberData;
+import com.revolving.data.Data;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		MemberData.load();
+		Data.allLoad();
 		
 	}
 }

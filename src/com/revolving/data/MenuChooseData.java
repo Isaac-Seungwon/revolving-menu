@@ -20,8 +20,8 @@ public class MenuChooseData {
 			String line = null;
 			while ((line = reader.readLine()) != null) {
 				String[] temp = line.split(",");
-				MenuChoose menuChoose = new MenuChoose(temp[0], temp[1], temp[2], temp[3]);
-				MenuChooseData.list.add(menuChoose);
+				MenuChoose menu = new MenuChoose(temp[0], temp[1], temp[2], temp[3]);
+				MenuChooseData.list.add(menu);
 			}
 
 			reader.close();
@@ -35,9 +35,9 @@ public class MenuChooseData {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\menuChoose.txt"));
 
-			for (MenuChoose menuChoose : MenuChooseData.list) {
-				writer.write(String.format("%s,%s,%s,%s\r\n", menuChoose.getNo(), menuChoose.getMemberNo(),
-						menuChoose.getMenuNo(), menuChoose.getDate()));
+			for (MenuChoose menu : MenuChooseData.list) {
+				writer.write(String.format("%s,%s,%s,%s\r\n", menu.getNo(), menu.getMemberNo(),
+						menu.getMenuNo(), menu.getDate()));
 			}
 
 			writer.close();

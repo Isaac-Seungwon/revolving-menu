@@ -35,9 +35,9 @@ public class StoreData {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\store.txt"));
 
-			for (Store Store : StoreData.list) {
-				writer.write(String.format("%s,%s,%s,%s,%s\r\n", Store.getNo(), Store.getName(),
-						Store.getMenuNo(), Store.getAddress(), Store.getTel()));
+			for (Store store : StoreData.list) {
+				writer.write(String.format("%s,%s,%s,%s,%s\r\n", store.getNo(), store.getName(),
+						store.getMenuNo(), store.getAddress(), store.getTel()));
 			}
 
 			writer.close();

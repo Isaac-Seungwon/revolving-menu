@@ -35,8 +35,8 @@ public class CategoryData {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\category.txt"));
 
-			for (Category Category : CategoryData.list) {
-				writer.write(String.format("%s,%s\r\n", Category.getNo(), Category.getCookery()));
+			for (Category category : CategoryData.list) {
+				writer.write(String.format("%s,%s\r\n", category.getNo(), category.getCookery()));
 			}
 
 			writer.close();
