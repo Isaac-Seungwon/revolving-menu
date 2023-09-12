@@ -1,5 +1,49 @@
 package com.revolving.data;
 
+import java.io.*;
+import java.util.*;
+
+import com.revolving.data.object.Rating;
+
 public class RatingData {
 
+	public static ArrayList<Rating> list;
+
+	static {
+		RatingData.list = new ArrayList<Rating>();
+	}
+
+	public static void load() {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("data\\storeReview.txt"));
+
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				String[] temp = line.split(",");
+				Rating rating = new Rating(temp[0], temp[1], temp[2], temp[3], temp[4]);
+				RatingData.list.add(rating);
+			}
+
+			reader.close();
+		} catch (Exception e) {
+			System.out.println("at Data.load");
+			e.printStackTrace();
+		}
+	}
+
+	public static void save() {
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\storeReview.txt"));
+
+			for (Rating Rating : RatingData.list) {
+				writer.write(String.format("%s,%s,%s,%s,%s\r\n", Rating.getNo(), Rating.getMemberNo(),
+						Rating.getStoreNo(), Rating.getReview(), Rating.getScore()));
+			}
+
+			writer.close();
+		} catch (Exception e) {
+			System.out.println("at Data.save");
+			e.printStackTrace();
+		}
+	}
 }
