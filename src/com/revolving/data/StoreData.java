@@ -17,12 +17,23 @@ public class StoreData {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader("data\\store.txt"));
 
-			String line = null;
-			while ((line = reader.readLine()) != null) {
-				String[] temp = line.split(",");
-				Store store = new Store(temp[0], temp[1], temp[2], temp[3], temp[4]);
-				StoreData.list.add(store);
-			}
+			String line;
+	        while ((line = reader.readLine()) != null) {
+	            String[] temp = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+
+	            for (int i = 0; i < temp.length; i++) {
+	                temp[i] = temp[i].replaceAll("\"", "").trim();
+	            }
+
+	            String tel = (temp.length > 4) ? temp[4] : null; 
+
+	            if (temp.length >= 4) {
+	                Store store = new Store(temp[0], temp[1], temp[2], temp[3], tel);
+	                StoreData.list.add(store);
+	            } else {
+	                System.out.println("Invalid data: " + Arrays.toString(temp));
+	            }
+	        }
 
 			reader.close();
 		} catch (Exception e) {
