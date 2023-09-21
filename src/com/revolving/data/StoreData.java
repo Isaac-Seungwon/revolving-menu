@@ -7,43 +7,54 @@ import com.revolving.data.object.Store;
 
 public class StoreData {
 
-	public static ArrayList<Store> list;
+   public static ArrayList<Store> list;
 
-	static {
-		StoreData.list = new ArrayList<Store>();
-	}
+   static {
+      StoreData.list = new ArrayList<Store>();
+   }
 
-	public static void load() {
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader("data\\store.txt"));
+   public static void load() {
+      try {
+         BufferedReader reader = new BufferedReader(new FileReader("data\\store.txt"));
 
-			String line = null;
-			while ((line = reader.readLine()) != null) {
-				String[] temp = line.split(",");
-				Store store = new Store(temp[0], temp[1], temp[2], temp[3], temp[4]);
-				StoreData.list.add(store);
-			}
+         String line;
+           while ((line = reader.readLine()) != null) {
+               String[] temp = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
 
-			reader.close();
-		} catch (Exception e) {
-			System.out.println("at Data.load");
-			e.printStackTrace();
-		}
-	}
+               for (int i = 0; i < temp.length; i++) {
+                   temp[i] = temp[i].replaceAll("\"", "").trim();
+               }
 
-	public static void save() {
-		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\store.txt"));
+               String tel = (temp.length > 4) ? temp[4] : null; 
 
-			for (Store store : StoreData.list) {
-				writer.write(String.format("%s,%s,%s,%s,%s\r\n", store.getNo(), store.getName(),
-						store.getMenuNo(), store.getAddress(), store.getTel()));
-			}
+               if (temp.length >= 4) {
+                   Store store = new Store(temp[0], temp[1], temp[2], temp[3], tel);
+                   StoreData.list.add(store);
+               } else {
+                   System.out.println("Invalid data: " + Arrays.toString(temp));
+               }
+           }
 
-			writer.close();
-		} catch (Exception e) {
-			System.out.println("at Data.save");
-			e.printStackTrace();
-		}
-	}
+         reader.close();
+      } catch (Exception e) {
+         System.out.println("at Data.load");
+         e.printStackTrace();
+      }
+   }
+
+   public static void save() {
+      try {
+         BufferedWriter writer = new BufferedWriter(new FileWriter("data\\store.txt"));
+
+         for (Store store : StoreData.list) {
+            writer.write(String.format("%s,%s,%s,%s,%s\r\n", store.getNo(), store.getName(),
+                  store.getMenuNo(), store.getAddress(), store.getTel()));
+         }
+
+         writer.close();
+      } catch (Exception e) {
+         System.out.println("at Data.save");
+         e.printStackTrace();
+      }
+   }
 }

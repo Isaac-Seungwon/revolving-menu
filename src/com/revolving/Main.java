@@ -1,5 +1,6 @@
 package com.revolving;
 
+import com.revolving.admin.AdminMenu;
 import com.revolving.data.Data;
 import com.revolving.member.MemberMenu;
 
@@ -19,6 +20,7 @@ public class Main {
       System.out.println("        `-------'      `-----'  `------'  `------'  `--'   `--'   `--' `--'        `--' `--'`--'  `--'" );
       
       Data.allLoad();
+      AdminMenu.menu();
       MemberMenu.menu();
       
       /*
