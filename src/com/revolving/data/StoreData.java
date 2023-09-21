@@ -10,6 +10,7 @@ public class StoreData {
 	public static ArrayList<Store> list;
 
 	static {
+		//test
 		StoreData.list = new ArrayList<Store>();
 	}
 
