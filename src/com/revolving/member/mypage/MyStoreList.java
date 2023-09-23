@@ -19,25 +19,23 @@ public class MyStoreList {
 	public static void viewMyStoreList() {
 
 		while (true) {
-			Main.printMenu("내가 선택한 메뉴");
-			Main.printOption("선택한 메뉴 기록 조회", "선택한 메뉴 기록 삭제");
+			Main.printMenu("나의 추천 메뉴");
+			Main.printOption("나의 추천 메뉴 조회", "나의 추천 메뉴 삭제");
 			String input = scan.nextLine().trim();
 
 			if (input.equals("1")) {
 
-				Main.printMenu("선택한 메뉴 기록 조회");
+				Main.printMenu("나의 추천 메뉴 조회");
 
 				for (Member member : MemberData.list) {
 					if (member.getId().equals(Login.user.getId())) {
-						displayMemberMenuRecords(member);
-						break;
 					}
 				}
 				System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
 				scan.nextLine();
 
 			} else if (input.equals("2")) {
-				Main.printMenu("선택한 메뉴 기록 삭제");
+				Main.printMenu("나의 추천 메뉴 삭제");
 				
 				for (Member member : MemberData.list) {
 					if (member.getId().equals(Login.user.getId())) {
@@ -72,7 +70,7 @@ public class MyStoreList {
 
 	private static void deleteVisitedStoreRecord() {
 
-		System.out.print("삭제할 메뉴 번호 입력: ");
+		System.out.print("삭제할 번호 입력: ");
 		int choice = scan.nextInt();
 		
 		Main.printLine();
