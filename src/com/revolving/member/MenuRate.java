@@ -19,7 +19,7 @@ public class MenuRate {
     public static void viewStoreReview() {
     
     	while(true) {
-	        Main.printMenu("매장 평가 열람");
+	        Main.printMenu("매장 평가 조회");
 	        
 	        Collections.sort(StoreData.list, (store1, store2) -> store1.getName().compareTo(store2.getName()));
 	
