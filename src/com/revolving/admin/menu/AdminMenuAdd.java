@@ -17,6 +17,7 @@ public class AdminMenuAdd {
 	private String weather;
 	private String price;
 	
+	
 	public void add() {
 		
 		Main.printMenu("메뉴 조회 > 메뉴 추가");
