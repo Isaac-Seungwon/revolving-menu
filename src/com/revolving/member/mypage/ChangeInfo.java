@@ -8,10 +8,20 @@ import com.revolving.data.object.Member;
 import com.revolving.join.Join;
 import com.revolving.login.Login;
 
+/**
+ * 회원 정보 수정 클래스
+ * 목적: 사용자의 회원 정보(ID, 비밀번호, 이름, 전화번호, 생년월일)를 수정한다.
+ * 
+ * @author 이승원
+ */
 public class ChangeInfo {
 
 	static Scanner scan = new Scanner(System.in);
-
+	
+	/**
+	 * 회원 정보를 수정하는 메서드
+	 * 아이디, 비밀번호, 이름, 전화번호, 생년월일 중 하나를 선택하여 수정할 수 있다.
+	 */
 	public static void changeUserInfo() {
 
 		while (true) {
@@ -36,6 +46,10 @@ public class ChangeInfo {
 		}
 	}
 
+	/**
+	 * 아이디를 수정하는 메서드
+	 * 새로운 아이디를 입력받고 유효성을 검사하여 아이디를 수정한다.
+	 */
 	private static void changeId() {
 		Main.printMenu("아이디 수정");
 		System.out.println("4자 ~ 16자의 영문 대소문자, 숫자를 포함하여 입력하세요.");
@@ -59,6 +73,10 @@ public class ChangeInfo {
 		System.out.println("아이디를 수정했습니다.");
 	}
 
+	/**
+	 * 비밀번호를 수정하는 메서드
+	 * 새로운 비밀번호를 입력받고 유효성을 검사하여 비밀번호를 수정한다.
+	 */
 	private static void changePw() {
 		Main.printMenu("비밀번호 수정");
 		System.out.println("9자 ~ 14자의 영문 대소문자, 숫자, 특수문자(!, #, ^, &, *)를 포함하여 입력하세요.");
@@ -75,6 +93,10 @@ public class ChangeInfo {
 		System.out.println("비밀번호를 수정했습니다.");
 	}
 
+	/**
+	 * 이름을 수정하는 메서드
+	 * 새로운 이름을 입력받고 유효성을 검사하여 이름을 수정한다.
+	 */
 	private static void changeName() {
 	    Main.printMenu("이름 수정");
 	    System.out.println("2자 ~ 4자의 한글 이름을 입력하세요.");
@@ -91,6 +113,10 @@ public class ChangeInfo {
 	    System.out.println("이름을 수정했습니다.");
 	}
 
+	/**
+	 * 전화번호를 수정하는 메서드
+	 * 새로운 전화번호를 입력받고 유효성을 검사하여 전화번호를 수정한다.
+	 */
 	private static void changeTel() {
 	    Main.printMenu("전화번호 수정");
 	    System.out.println("11자의 숫자로 전화번호를 입력하세요.");
@@ -107,6 +133,10 @@ public class ChangeInfo {
 	    System.out.println("전화번호를 수정했습니다.");
 	}
 
+	/**
+	 * 생년월일을 수정하는 메서드
+	 * 새로운 생년월일을 입력받고 유효성을 검사하여 생년월일을 수정한다.
+	 */
 	private static void changeBirthdate() {
 	    Main.printMenu("생년월일 수정");
 	    System.out.println("6자의 숫자로 생년월일을 입력하세요.");
