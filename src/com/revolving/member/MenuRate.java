@@ -45,7 +45,7 @@ public class MenuRate {
 	                }
 	            }
 	            System.out.printf("리뷰: %s\n", review.getReview());
-	            System.out.printf("점수: %s\n", review.getScore());
+	            System.out.printf("평점: %s\n", review.getScore());
 	            
 	            if (i != endIndex - 1) {
 	                System.out.println();

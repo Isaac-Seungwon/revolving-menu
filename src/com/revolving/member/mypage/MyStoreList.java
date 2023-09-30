@@ -29,6 +29,7 @@ public class MyStoreList {
 
 				for (Member member : MemberData.list) {
 					if (member.getId().equals(Login.user.getId())) {
+						viewMyMenuRecord(member);
 					}
 				}
 				System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
@@ -39,7 +40,7 @@ public class MyStoreList {
 				
 				for (Member member : MemberData.list) {
 					if (member.getId().equals(Login.user.getId())) {
-						displayMemberMenuRecords(member);
+						viewMyMenuRecord(member);
 						break;
 					}
 				}
@@ -52,7 +53,7 @@ public class MyStoreList {
 		}
 	}
 
-	private static void displayMemberMenuRecords(Member member) {
+	private static void viewMyMenuRecord(Member member) {
 		int count = 1;
 		
 		for (MenuChoose menuChoose : MenuChooseData.list) {
