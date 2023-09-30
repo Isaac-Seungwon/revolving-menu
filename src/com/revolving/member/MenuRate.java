@@ -73,7 +73,7 @@ public class MenuRate {
 	}
 
 	/**
-     * 사용자가 다음 리뷰 보기, 이전  보기를 선택할 수 있는 메서드.
+     * 사용자가 다음 리뷰 보기, 이전 보기를 선택할 수 있는 메서드.
      *
      * @param endIndex 표시할 리뷰의 끝 인덱스
      * @return false 반환
