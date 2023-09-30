@@ -15,20 +15,21 @@ import com.revolving.login.Login;
 
 /**
  * 나의 매장 평가 클래스
- * @author 이승원
  * 목적: 나의 매장 평가에 대한 조회, 추가, 수정, 삭제 기능을 수행한다.
  * 기능:
  * - 나의 매장 평가 조회: 나의 매장 평가를 조회한다.
  * - 나의 매장 평가 추가: 매장 번호, 리뷰 내용, 평점을 입력하여 평가를 추가한다.
  * - 나의 매장 평가 수정: 나의 매장 평가를 수정한다.
  * - 나의 매장 평가 삭제: 나의 매장 평가를 삭제한다.
+ * 
+ * @author 이승원
  */
 public class MyRate {
 
 	static Scanner scan = new Scanner(System.in);
 
 	/**
-     * 나의 매장 평가 기능을 선택하는 메서드.
+     * 나의 매장 평가 기능을 선택하는 메서드
      */
 	public static void viewUserRate() {
 
@@ -63,7 +64,7 @@ public class MyRate {
 	}
 
 	/**
-     * 나의 매장 평가를 조회하는 메서드.
+     * 나의 매장 평가를 조회하는 메서드
      */
 	private static void viewMyStoreReview() {
 		int count = 0;
@@ -120,7 +121,7 @@ public class MyRate {
 	}
 
 	/**
-     * 나의 매장 평가를 추가하는 메서드.
+     * 나의 매장 평가를 추가하는 메서드
      */
 	private static void addReview() {
 		System.out.printf("1 ~ %d의 매장 번호를 입력하세요.\n", StoreData.list.size());
@@ -150,7 +151,7 @@ public class MyRate {
 	}
 
 	/**
-     * 나의 매장 평가를 수정하는 메서드.
+     * 나의 매장 평가를 수정하는 메서드
      */
 	private static void editReview() {
 		System.out.print("수정할 리뷰 번호 입력: ");
@@ -181,7 +182,7 @@ public class MyRate {
 	}
 
 	/**
-     * 나의 매장 평가를 삭제하는 메서드.
+     * 나의 매장 평가를 삭제하는 메서드
      */
 	private static void deleteReview() {
 		System.out.print("삭제할 리뷰 번호 입력: ");
@@ -203,7 +204,7 @@ public class MyRate {
 	}
 	
 	/**
-	 * 나의 매장 평가를 삭제하는 메서드.
+	 * 나의 매장 평가를 삭제하는 메서드
 	 * 
 	 * @param reviewNo 삭제할 리뷰 번호
 	 */
