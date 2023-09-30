@@ -7,9 +7,13 @@ import com.revolving.Main;
 import com.revolving.data.MemberData;
 import com.revolving.data.MenuChooseData;
 import com.revolving.data.MenuData;
+import com.revolving.data.RatingData;
+import com.revolving.data.StoreData;
 import com.revolving.data.object.Member;
 import com.revolving.data.object.Menu;
 import com.revolving.data.object.MenuChoose;
+import com.revolving.data.object.Rating;
+import com.revolving.data.object.Store;
 import com.revolving.login.Login;
 
 /**
@@ -73,13 +77,32 @@ public class MyStoreList {
 		
 		for (MenuChoose menuChoose : MenuChooseData.list) {
 			if (menuChoose.getMemberNo().equals(member.getNo())) {
+				boolean storeFound = false;
 
 				for (Menu menu : MenuData.list) {
-					if (menu.getNo().equals(menuChoose.getMenuNo())) {
-						System.out.printf("%d. 메뉴명: %s, 방문일: %s\n", count++, menu.getName(), menuChoose.getDate());
-						break;
+					for (Store store : StoreData.list) {
+						for (Rating review : RatingData.list) {
+							if (store.getMenuNo().equals(menuChoose.getMenuNo())) {
+								if (store.getNo().equals(review.getStoreNo())) {
+									if (menu.getNo().equals(menuChoose.getMenuNo())) {
+										System.out.printf("%d. 메뉴명: %s, 매장명: %s, 방문일: %s\n", count++, menu.getName(), store.getName(), menuChoose.getDate());
+										storeFound = true;
+										break;
+									}
+								}
+							}
+						}
 					}
 				}
+				
+				if (!storeFound) {
+					for (Menu menu : MenuData.list) {
+						if (menu.getNo().equals(menuChoose.getMenuNo())) {
+							System.out.printf("%d. 메뉴명: %s, 방문일: %s\n", count++, menu.getName(), menuChoose.getDate());
+							break;
+						}
+					}
+	            }
 			}
 		}
 	}
@@ -109,12 +132,35 @@ public class MyStoreList {
 
 						// 사용자가 선택한 번호와 리스트 번호와 일치하면 해당 추천 메뉴 기록 삭제
 						if (count == choice) {
-							iterator.remove();
-							MenuChooseData.save();
 							
-							System.out.println("선택한 메뉴 기록이 삭제되었습니다.");
-							System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
+                            iterator.remove();
+                            MenuChooseData.save();
+							System.out.print("선택한 메뉴 기록을 삭제했습니다.\n");
 							scan.nextLine();
+							
+							// 해당 메뉴 기록에 대한 리뷰가 있으면 삭제할지 선택
+							for (Store store : StoreData.list) {
+								for (Rating review : RatingData.list) {
+									if (store.getMenuNo().equals(menuChoose.getMenuNo())) {
+										if (store.getNo().equals(review.getStoreNo()) && review.getMemberNo().equals(Login.user.getNo())) {
+											System.out.print("삭제한 메뉴에 대한 매장 리뷰를 작성한 기록이 있습니다.\n");
+											System.out.print("해당 리뷰도 함께 삭제하시겠습니까? (y/n): ");
+					                        String deleteChoice = scan.nextLine().trim();
+					                        
+					                        if (deleteChoice.equals("y")) {
+												if (store.getNo().equals(review.getStoreNo())) {
+													MyRate.deleteReview(review.getNo());
+												}
+					                        } else {
+					                            System.out.println("관련 리뷰 및 평점을 유지합니다.");
+					                        }
+					                        break;
+										}
+									}
+								}
+							}
+							
+							System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
 							scan.nextLine();
 							return;
 						}

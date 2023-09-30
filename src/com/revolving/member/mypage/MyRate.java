@@ -207,4 +207,25 @@ public class MyRate {
 
 		System.out.println("잘못된 리뷰 번호를 입력하셨습니다.");
 	}
+	
+	/**
+	 * 나의 매장 평가를 삭제하는 메서드.
+	 * 
+	 * @param reviewNo 삭제할 리뷰 번호
+	 */
+	public static void deleteReview(String reviewNo) {
+		Iterator<Rating> iterator = RatingData.list.iterator();
+
+		while (iterator.hasNext()) {
+			Rating review = iterator.next();
+			if (review.getNo().equals(reviewNo) && review.getMemberNo().equals(Login.user.getNo())) {
+				iterator.remove();
+				RatingData.save();
+				System.out.println("리뷰를 삭제했습니다.");
+				return;
+			}
+		}
+
+		System.out.println("잘못된 리뷰 번호를 입력하셨습니다.");
+	}
 }
