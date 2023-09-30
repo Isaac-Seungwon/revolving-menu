@@ -35,9 +35,12 @@ public class RatingData {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter("data\\storeReview.txt"));
 
+			int reviewNumber = 1;
+			
 			for (Rating review : RatingData.list) {
-				writer.write(String.format("%s,%s,%s,%s,%s\r\n", review.getNo(), review.getMemberNo(),
+				writer.write(String.format("%d,%s,%s,%s,%s\r\n", reviewNumber, review.getMemberNo(),
 						review.getStoreNo(), review.getReview(), review.getScore()));
+				reviewNumber++;
 			}
 
 			writer.close();
