@@ -145,6 +145,14 @@ public class MyStoreList {
 								for (Rating review : RatingData.list) {
 									if (store.getMenuNo().equals(menuChoose.getMenuNo())) {
 										if (store.getNo().equals(review.getStoreNo()) && review.getMemberNo().equals(Login.user.getNo())) {
+											Main.printLine();
+											System.out.printf("리뷰번호: %s\n", review.getNo());
+											System.out.printf("매장명: %s\n", store.getName());
+											System.out.printf("매장주소: %s\n", store.getAddress());
+											System.out.printf("매장번호: %s\n", store.getTel());
+											System.out.printf("리뷰: %s\n", review.getReview());
+											System.out.printf("평점: %s\n", review.getScore());
+											Main.printLine();
 											System.out.print("삭제한 메뉴에 대한 매장 리뷰를 작성한 기록이 있습니다.\n");
 											System.out.print("해당 리뷰도 함께 삭제하시겠습니까? (y/n): ");
 					                        String deleteChoice = scan.nextLine().trim();
@@ -154,7 +162,7 @@ public class MyStoreList {
 													MyRate.deleteReview(review.getNo());
 												}
 					                        } else {
-					                            System.out.println("관련 리뷰 및 평점을 유지합니다.");
+					                            System.out.println("해당 리뷰를 유지합니다.");
 					                        }
 					                        break;
 										}
