@@ -15,7 +15,8 @@ import com.revolving.data.object.Store;
  * 메뉴 평가 조회 클래스
  * @author 이승원
  * 목적: 메뉴 평가를 조회한다.
- * 기능: 메뉴 평가 조회, 이전 리뷰 보기/다음 리뷰 보기 기능을 수행한다.
+ * 기능:
+ * - 메뉴 평가 조회: 이전 리뷰 보기/다음 리뷰 보기 기능으로 최대 20개의 리뷰를 조회한다.
  */
 public class MenuRate {
 
@@ -72,7 +73,7 @@ public class MenuRate {
 	}
 
 	/**
-     * 사용자가 다음 후기 보기, 이전 후기 보기를 선택할 수 있는 메서드.
+     * 사용자가 다음 리뷰 보기, 이전  보기를 선택할 수 있는 메서드.
      *
      * @param endIndex 표시할 리뷰의 끝 인덱스
      * @return false 반환
@@ -81,10 +82,10 @@ public class MenuRate {
 		while (true) {
 			Main.printLine();
 			if (endIndex < RatingData.list.size()) {
-				System.out.println("1. 다음 후기 보기");
+				System.out.println("1. 다음 리뷰 보기");
 			}
 			if (currentIndex > 0) {
-				System.out.println("2. 이전 후기 보기");
+				System.out.println("2. 이전 리뷰 보기");
 			}
 			System.out.println("0. 돌아가기");
 			System.out.print("번호 입력: ");
@@ -95,7 +96,7 @@ public class MenuRate {
 					currentIndex += 20;
 					return true;
 				} else {
-					System.out.println("다음 후기가 없습니다.");
+					System.out.println("다음 리뷰가 없습니다.");
 					scan.nextLine();
 				}
 			} else if (input.equals("2")) {
@@ -103,7 +104,7 @@ public class MenuRate {
 					currentIndex = Math.max(0, currentIndex - 20);
 					return true;
 				} else {
-					System.out.println("이전 후기가 없습니다.");
+					System.out.println("이전 리뷰가 없습니다.");
 					scan.nextLine();
 				}
 			} else if (input.equals("0")) {
