@@ -79,6 +79,7 @@ public class MyStoreList {
 			if (menuChoose.getMemberNo().equals(member.getNo())) {
 				boolean storeFound = false;
 
+				// 매장명이 있는 경우
 				for (Menu menu : MenuData.list) {
 					for (Store store : StoreData.list) {
 						for (Rating review : RatingData.list) {
@@ -95,6 +96,7 @@ public class MyStoreList {
 					}
 				}
 				
+				// 매장명이 없는 경우
 				if (!storeFound) {
 					for (Menu menu : MenuData.list) {
 						if (menu.getNo().equals(menuChoose.getMenuNo())) {
