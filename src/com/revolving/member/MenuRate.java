@@ -13,10 +13,11 @@ import com.revolving.data.object.Store;
 
 /**
  * 메뉴 평가 조회 클래스
- * @author 이승원
  * 목적: 메뉴 평가를 조회한다.
  * 기능:
  * - 메뉴 평가 조회: 이전 리뷰 보기/다음 리뷰 보기 기능으로 최대 20개의 리뷰를 조회한다.
+ * 
+ * @author 이승원
  */
 public class MenuRate {
 
@@ -24,7 +25,7 @@ public class MenuRate {
 	private static int currentIndex = 0; // 현재 리뷰 인덱스 (1~20)
 
 	/**
-     * 매장 평가를 20개씩 조회하는 메서드.
+     * 매장 평가를 20개씩 조회하는 메서드
      */
 	public static void viewStoreReview() {
 
@@ -73,7 +74,7 @@ public class MenuRate {
 	}
 
 	/**
-     * 사용자가 다음 리뷰 보기, 이전 보기를 선택할 수 있는 메서드.
+     * 다음 리뷰 보기, 이전 보기를 선택하는 메서드
      *
      * @param endIndex 표시할 리뷰의 끝 인덱스
      * @return false 반환
