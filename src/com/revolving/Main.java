@@ -3,6 +3,7 @@ package com.revolving;
 import java.util.Scanner;
 
 import com.revolving.data.Data;
+import com.revolving.join.Join;
 import com.revolving.login.Login;
 import com.revolving.member.MemberMenu;
 import com.revolving.member.MenuRate;
@@ -33,7 +34,7 @@ public class Main {
 			if (input.equals("1")) {
 				Login.login();
 			} else if (input.equals("2")) {
-				
+				Join.join();
 			} else if (input.equals("3")) {
 				
 			} else if (input.equals("4")) {
