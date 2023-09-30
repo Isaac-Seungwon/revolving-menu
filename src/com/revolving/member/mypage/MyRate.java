@@ -40,31 +40,25 @@ public class MyRate {
 			if (input.equals("1")) {
 				Main.printMenu("나의 매장 평가 조회");
 				viewMyStoreReview();
-				System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
-				scan.nextLine();
 
 			} else if (input.equals("2")) {
 				Main.printMenu("나의 매장 평가 추가");
 				addReview();
-				System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
-				scan.nextLine();
 
 			} else if (input.equals("3")) {
 				Main.printMenu("나의 매장 평가 수정");
 				viewMyStoreReview();
 				editReview();
-				System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
-				scan.nextLine();
 
 			} else if (input.equals("4")) {
 				Main.printMenu("나의 매장 평가 삭제");
 				viewMyStoreReview();
 				deleteReview();
-				System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
-				scan.nextLine();
 			} else {
 				return;
 			}
+			System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
+			scan.nextLine();
 		}
 	}
 
@@ -129,7 +123,7 @@ public class MyRate {
      * 나의 매장 평가를 추가하는 메서드.
      */
 	private static void addReview() {
-		System.out.printf("1에서 %d까지의 매장 번호를 입력하세요.\n", StoreData.list.size());
+		System.out.printf("1 ~ %d의 매장 번호를 입력하세요.\n", StoreData.list.size());
 		System.out.print("매장 번호 입력: ");
 		String storeNo = scan.nextLine().trim();
 		if (Integer.parseInt(storeNo) < 1 || (Integer.parseInt(storeNo) > StoreData.list.size())) {
@@ -140,7 +134,7 @@ public class MyRate {
 		System.out.print("리뷰 내용 입력: ");
 		String review = scan.nextLine().trim();
 
-		System.out.print("0에서 5까지의 평점을 입력하세요.\n");
+		System.out.print("0 ~ 5의 평점을 입력하세요.\n");
 		System.out.print("평점 입력: ");
 		String score = scan.nextLine().trim();
 		if (Integer.parseInt(score) < 0 || Integer.parseInt(score) > 5) {
