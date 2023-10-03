@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.revolving.Main;
 import com.revolving.admin.menu.AdminMenuAdd;
+import com.revolving.admin.menu.AdminMenuSort;
 
 public class MenuManagement {
 	
@@ -19,7 +20,8 @@ public class MenuManagement {
 			String input = scan.nextLine().trim();
 			
 			if (input.equals("1")) {
-				
+				AdminMenuSort adminMenuSort = new AdminMenuSort();
+				adminMenuSort.sort();
 			} else if (input.equals("2")) {
 				AdminMenuAdd adminMenuAdd = new AdminMenuAdd();
 				adminMenuAdd.add();

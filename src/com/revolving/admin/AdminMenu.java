@@ -19,9 +19,10 @@ public class AdminMenu {
 			if (input.equals("1")) {
 				MenuManagement.menu();
 			} else if (input.equals("2")) {
-				// 매장 관리
+				StoreManagement.store();
 			} else if (input.equals("3")) {
-				// 회원 정보 관리
+				MemberManagement memberManagement = new MemberManagement();
+				memberManagement.menu();
 			} else if (input.equals("4")) {
 				// 카테고리 관리
 			} else if (input.equals("5")) {

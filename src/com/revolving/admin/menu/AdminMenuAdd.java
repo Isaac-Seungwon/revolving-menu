@@ -10,7 +10,11 @@ import com.revolving.data.object.Menu;
 
 public class AdminMenuAdd {
 	
-	static Scanner scan = new Scanner(System.in);
+	static Scanner scan;
+	
+	static {
+		scan = new Scanner(System.in);
+	}
 	
 	private String name;
 	private String category;
@@ -29,9 +33,9 @@ public class AdminMenuAdd {
 		
 		modify();
 		
-		Menu menu = new Menu(MenuData.list.size() + "", name, category, weather, price);
+		Menu menu = new Menu((MenuData.list.size() + 1) + "", name, category, weather, price);
 		MenuData.list.add(menu);
-		//MenuData.save();
+		MenuData.save();
 
 		System.out.println("메뉴 추가가 완료되었습니다.");
 		System.out.println("아무거나 입력하면 메뉴 관리 페이지로 이동합니다.");
@@ -46,14 +50,35 @@ public class AdminMenuAdd {
 	
 	private void category() {
 		Main.printMenu("카테고리");
-		printOption("한식", "양식", "일식", "중식");
+		for (Category category : CategoryData.list) {
+			System.out.printf("%s. %s\r\n", category.getNo(), category.getCookery());
+		}
+		Main.printLine();
+		System.out.print("번호 입력: ");
 		category = scan.nextLine().trim();
+		
+		if (category.matches("\\d+") && Integer.parseInt(category) >= 0 && Integer.parseInt(category) < CategoryData.list.size()) {}
+		else {
+			System.out.println("잘못 입력하셨습니다.");
+			category();
+		}
 	}
 	
 	private void weather() {
 		Main.printMenu("계절");
-		printOption("여름","겨울");
+		System.out.println("0. 기타");
+		System.out.println("1. 여름");
+		System.out.println("2. 겨울");
+		Main.printLine();
+		System.out.print("번호 입력: ");
+		
 		weather = scan.nextLine().trim();
+		
+		if (weather.matches("\\d+") && Integer.parseInt(weather) >= 0 && Integer.parseInt(weather) < 3) {}
+		else {
+			System.out.println("잘못 입력하셨습니다.");
+			weather();
+		}
 	}
 	
 	private void price() {
@@ -94,14 +119,5 @@ public class AdminMenuAdd {
 		}
 		
 		modify();
-	}
-	
-	private void printOption(String... options) {
-		for (int i = 0; i < options.length; i++) {
-			System.out.println((i + 1) + ". " + options[i]);
-		}
-		System.out.println("0. 기타");
-		Main.printLine();
-		System.out.print("번호 입력: ");
 	}
 }
