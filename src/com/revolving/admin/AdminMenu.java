@@ -25,7 +25,7 @@ public class AdminMenu {
          } else if (input.equals("4")) {
             CategoryManagement.checkCategory();
          } else if (input.equals("5")) {
-            // 사용자 평가 관리
+            RateManagement.checkRate();
          } else {
             return;
          }
