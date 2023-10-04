@@ -209,6 +209,7 @@ public class MemberManagement {
 		
 	}
 
+	
 	private void storeReview(String number) {
 		
 		Main.printMenu(name + " 평가 조회");

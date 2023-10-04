@@ -3,6 +3,8 @@ package com.revolving;
 import java.util.Scanner;
 
 import com.revolving.data.Data;
+import com.revolving.find.FindId;
+import com.revolving.find.ResetPw;
 import com.revolving.join.Join;
 import com.revolving.login.Login;
 import com.revolving.member.MemberMenu;
@@ -36,9 +38,9 @@ public class Main {
 			} else if (input.equals("2")) {
 				Join.join();
 			} else if (input.equals("3")) {
-				
+				FindId.findId();
 			} else if (input.equals("4")) {
-				
+				ResetPw.resetPw();
 			} else {
 				return;
 			}

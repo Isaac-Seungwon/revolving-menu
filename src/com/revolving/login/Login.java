@@ -26,7 +26,7 @@ public class Login {
 			System.out.println("Enter를 누르면 관리자 메뉴로 이동합니다.");
 			scan.nextLine();
 
-			AdminMenu.adminMenu(); // 관리자 기능 실행
+			AdminMenu.menu(); // 관리자 기능 실행
 		} else { // 회원 로그인
 			user = getMember(id, pwd);
 			
@@ -42,7 +42,9 @@ public class Login {
 	private static Member getMember(String id, String pwd) {
         for (Member member : MemberData.list) {
             if (member.getId().equals(id) && member.getPwd().equals(pwd)) {
+            	Main.printLine();
             	System.out.println(member.getName() + " 회원님 환영합니다.");
+            	System.out.println();
                 return member;
             }
         }
