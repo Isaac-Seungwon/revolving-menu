@@ -58,6 +58,7 @@ public class MyRate {
 			} else {
 				return;
 			}
+			
 			System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
 			scan.nextLine();
 		}
