@@ -98,7 +98,7 @@ public class MyRate {
 							if (store.getNo().equals(review.getStoreNo())) {
 								System.out.printf("매장명: %s\n", store.getName());
 								System.out.printf("매장주소: %s\n", store.getAddress());
-								System.out.printf("매장번호: %s\n", store.getTel());
+								System.out.printf("전화번호: %s\n", store.getTel());
 								break;
 							}
 						}
