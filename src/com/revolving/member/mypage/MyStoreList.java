@@ -139,7 +139,6 @@ public class MyStoreList {
 							System.out.print("선택한 메뉴 기록을 삭제했습니다.\n");
 							scan.nextLine();
 							
-							
 							// 해당 메뉴 기록에 대한 리뷰가 있으면 삭제할지 선택
 							for (Store store : StoreData.list) {
 								for (Rating review : RatingData.list) {
