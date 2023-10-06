@@ -22,7 +22,7 @@ public class MenuSort {
 		scan = new Scanner(System.in);
 	}
 
-	public void mesuSort() {
+	public void menuSort() {
 
 		while (true) {
 			Main.printMenu("정렬 기준 선택");
