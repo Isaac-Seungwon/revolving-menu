@@ -3,6 +3,8 @@ package com.revolving;
 import java.util.Scanner;
 
 import com.revolving.data.Data;
+import com.revolving.find.FindId;
+import com.revolving.find.ResetPw;
 import com.revolving.join.Join;
 import com.revolving.login.Login;
 import com.revolving.member.MemberMenu;
@@ -36,40 +38,20 @@ public class Main {
 			} else if (input.equals("2")) {
 				Join.join();
 			} else if (input.equals("3")) {
-				
+				FindId.findId();
 			} else if (input.equals("4")) {
-				
+				ResetPw.resetPw();
 			} else {
+				System.out.println();
+				System.out.println("  ;)( ;              ");
+				System.out.println("  :----:     o8Oo.   ");
+				System.out.println(" C|====| ._o8o8o8Oo_.");
+				System.out.println("  |    |  \\========/");
+				System.out.println("  `----'   `------'  ");
+				System.out.println("다음에 다시 만나요~ :)");
 				return;
 			}
 		}
-		
-		/*
-		
-		System.out.println();
-		System.out.println("  ;)( ;              ");
-		System.out.println("  :----:     o8Oo.   ");
-		System.out.println(" C|====| ._o8o8o8Oo_.");
-		System.out.println("  |    |  \\========/");
-		System.out.println("  `----'   `------'  ");
-
-		System.out.println();
-		System.out.println("         (           ");
-		System.out.println("          )          ");
-		System.out.println("     __..---..__     ");
-		System.out.println(" ,-='  /  |  \\  `=-. ");
-		System.out.println(":--..___________..--;");
-		System.out.println(" \\.,_____________,./ ");
-		
-		System.out.println();
-		System.out.println("        _....._           ");
-		System.out.println("    _.:`.--|--.`:._       ");
-		System.out.println("  .: .'\\o  | o /'. '.    ");
-		System.out.println(" // '.  \\ o|  /  o '.\\  ");
-		System.out.println("//'._o'. \\ |o/ o_.-'o\\\\");
-		System.out.println("|| o '-.'.\\|/.-' o   ||  ");
-		System.out.println("||--o--o-->|'             ");
-		*/
 	}
 	
 	/**
