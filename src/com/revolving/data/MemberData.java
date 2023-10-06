@@ -46,4 +46,10 @@ public class MemberData {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void addMember(String name, String id, String pw, String tel, String birth) {
+        int nextNo = list.size() + 1;
+        Member newMember = new Member(String.valueOf(nextNo), name, id, pw, tel, birth);
+        list.add(newMember);
+    }
 }
