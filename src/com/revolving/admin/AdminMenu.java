@@ -24,23 +24,15 @@ public class AdminMenu {
 				MemberManagement memberManagement = new MemberManagement();
 				memberManagement.menu();
 			} else if (input.equals("4")) {
-<<<<<<< HEAD
-				// 카테고리 관리
-			} else if (input.equals("5")) {
-				// 사용자 평가 관리
-=======
 	            CategoryManagement.checkCategory();
 			} else if (input.equals("5")) {
 	            RateManagement.checkRate();
->>>>>>> main
-			} else {
+			} else if (input.equals("0")){
 				return;
+			} else {
+				System.out.println("잘못 입력하셨습니다.");
 			}
 		}
 	}
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> main
