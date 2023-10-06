@@ -21,7 +21,7 @@ public class MyPageMenu {
 				MyRate.viewUserRate();
 			} else if (input.equals("3")) {
 				ChangeInfo.changeUserInfo();
-			} else {
+			} else if (input.equals("0")) {
 				return;
 			}
 		}

@@ -39,7 +39,7 @@ public class ChangeInfo {
 				changeTel();
 			} else if (input.equals("5")) {
 				changeBirthdate();
-			} else {
+			} else if (input.equals("0")) {
 				return;
 			}
 			scan.nextLine();

@@ -39,7 +39,7 @@ public class Main {
 				FindId.findId();
 			} else if (input.equals("4")) {
 				ResetPw.resetPw();
-			} else {
+			} else if (input.equals("0")) {
 				System.out.println();
 				System.out.println("  ;)( ;              ");
 				System.out.println("  :----:     o8Oo.   ");

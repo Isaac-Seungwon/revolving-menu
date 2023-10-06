@@ -55,7 +55,7 @@ public class MyRate {
 				Main.printMenu("나의 매장 평가 삭제");
 				viewMyStoreReview();
 				deleteReview();
-			} else {
+			} else if (input.equals("0")) {
 				return;
 			}
 			

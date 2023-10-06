@@ -63,7 +63,7 @@ public class MyStoreList {
 				
 				deleteVisitedStoreRecord();
 
-			} else {
+			} else if (input.equals("0")) {
 				return;
 			}
 		}

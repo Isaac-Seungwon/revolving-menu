@@ -112,8 +112,6 @@ public class MenuRate {
 				System.out.println("Enter를 누르면 이전 화면으로 돌아갑니다.");
 				scan.nextLine();
 				return false;
-			} else {
-				System.out.println("잘못 입력하셨습니다.");
 			}
 		}
 	}

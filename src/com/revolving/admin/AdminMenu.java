@@ -27,10 +27,11 @@ public class AdminMenu {
 	            CategoryManagement.checkCategory();
 			} else if (input.equals("5")) {
 	            RateManagement.checkRate();
-			} else {
+			} else if (input.equals("0")){
 				return;
+			} else {
+				System.out.println("잘못 입력하셨습니다.");
 			}
 		}
 	}
-	
 }

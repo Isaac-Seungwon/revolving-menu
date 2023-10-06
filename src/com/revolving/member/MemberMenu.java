@@ -24,7 +24,7 @@ public class MemberMenu {
 				MenuRate.viewStoreReview();
 			} else if (input.equals("4")) {
 				MyPageMenu.viewUserMenu();
-			} else {
+			} else if (input.equals("0")) {
 				return;
 			}
 		}

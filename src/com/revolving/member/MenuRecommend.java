@@ -20,30 +20,30 @@ public class MenuRecommend {
 	
 	public static void menuRecommend() {
 		
-		Main.printMenu("메뉴 추천 기능 선택");
-		Main.printOption("무작위 메뉴 추천", "카테고리 메뉴 추천", "계절별 제철 음식 추천");
-
-		// 메뉴 랜덤 무작위 1개 추첨
-		// 카테고리 선택
-		// 관련 메뉴 랜덤 5개
-		// 계절 선택
-		// 관련 메뉴 랜덤 3개
-
-		String sel = scan.nextLine();
-
-		if (sel.equals("1")) {
-			randomMenu();
-
-		} else if (sel.equals("2")) {
-			categoryRandom();
-
-		} else if (sel.equals("3")) {
-			seasonRandom();
-
-		} else {
-			System.out.println("번호를 다시 입력해주세요.");
-			Main.printLine();
-			System.out.println("번호 입력");
+		while (true) {
+			Main.printMenu("메뉴 추천 기능 선택");
+			Main.printOption("무작위 메뉴 추천", "카테고리 메뉴 추천", "계절별 제철 음식 추천");
+	
+			// 메뉴 랜덤 무작위 1개 추첨
+			// 카테고리 선택
+			// 관련 메뉴 랜덤 5개
+			// 계절 선택
+			// 관련 메뉴 랜덤 3개
+	
+			String sel = scan.nextLine();
+	
+			if (sel.equals("1")) {
+				randomMenu();
+	
+			} else if (sel.equals("2")) {
+				categoryRandom();
+	
+			} else if (sel.equals("3")) {
+				seasonRandom();
+	
+			} else if (sel.equals("0")) {
+				return;
+			}
 		}
 	}
 
