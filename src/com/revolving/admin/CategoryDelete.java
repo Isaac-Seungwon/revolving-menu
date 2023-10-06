@@ -65,11 +65,11 @@ public class CategoryDelete {
 					MenuData.save();
 					CategoryData.save();
 					sc.nextLine();
-					AdminMenu.Menu();
+					AdminMenu.menu();
 				} else if (answer.toUpperCase().equals("N")) {
 					System.out.println("삭제가 취소되었습니다. Enter를 입력하시면 관리자 메뉴로 돌아갑니다.");
 					sc.nextLine();
-					AdminMenu.Menu();
+					AdminMenu.menu();
 					flag = false;
 				} else
 					System.out.println("바르게 입력해 주시기 바랍니다.");

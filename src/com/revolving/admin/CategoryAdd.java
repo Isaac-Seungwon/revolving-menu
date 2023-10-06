@@ -45,7 +45,7 @@ public class CategoryAdd {
 						System.out.println("카테고리가 추가되었습니다.");
 						System.out.println("관리자 메뉴로 이동하시기 위해 Enter를 입력해 주십시오.");
 						sc.nextLine();
-						AdminMenu.Menu();
+						AdminMenu.menu();
 						loop=false;
 				}
 
