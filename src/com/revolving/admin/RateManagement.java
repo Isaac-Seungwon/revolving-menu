@@ -23,7 +23,7 @@ public class RateManagement {
 			} else if (check.equals("2")) { // 삭제
 				RateDelete.RateDel();
 			} else if(check.equals("0")) {
-				AdminMenu.Menu();  //관리자 메뉴로 이동.
+				AdminMenu.menu();  //관리자 메뉴로 이동.
 			}else {
 				System.out.println("올바른 번호를 입력해주시기 바랍니다.");
 				System.out.println("계속하시려면 Enter를 입력해 주십시오.");
