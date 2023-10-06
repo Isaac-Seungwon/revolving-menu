@@ -17,9 +17,9 @@ public class MemberMenu {
 			String input = scan.nextLine().trim();
 			
 			if (input.equals("1")) {
-				
+				MenuRecommend.menuRecommend();
 			} else if (input.equals("2")) {
-				
+				MenuSort.mesuSort();
 			} else if (input.equals("3")) {
 				MenuRate.viewStoreReview();
 			} else if (input.equals("4")) {

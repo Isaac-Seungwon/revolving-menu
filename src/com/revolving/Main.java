@@ -1,50 +1,25 @@
 package com.revolving;
-
-import java.util.Scanner;
-
+import com.revolving.admin.AdminMenu;
 import com.revolving.data.Data;
-import com.revolving.find.FindId;
-import com.revolving.find.ResetPw;
-import com.revolving.join.Join;
-import com.revolving.login.Login;
 import com.revolving.member.MemberMenu;
-import com.revolving.member.MenuRate;
 
 public class Main {
-    static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
-		Data.allLoad(); // 데이터 불러오기
 		
-		while(true) {
-			System.out.println();
-			System.out.println("                  _ .-') _                                           _   .-')      _ (`-.    ('-.         .-') _ ");
-			System.out.println("		 ( (  OO) )                                         ( '.( OO )_   ( (OO  )  ( OO ).-.    ( OO ) )" );
-			System.out.println("		  \\     .'_  .-'),-----.  ,--.      ,--.      ,-.-') ,--.   ,--.)_.`     \\ / . --. /,--./ ,--,'");
-			System.out.println("		  ,`'--..._)( OO'  .-.  ' |  |.-')  |  |.-')  |  |OO)|   `.'   |(__...--''  | \\-.  \\ |   \\ |  |\\ ");
-			System.out.println("		  |  |  \\  '/   |  | |  | |  | OO ) |  | OO ) |  |  \\|         | |  /  | |.-'-'  |  ||    \\|  | )");
-			System.out.println("		  |  |   ' |\\_) |  |\\|  | |  |`-' | |  |`-' | |  |(_/|  |'.'|  | |  |_.' | \\| |_.'  ||  .     |/");
-			System.out.println("		  |  |   / :  \\ |  | |  |(|  '---.'(|  '---.',|  |_.'|  |   |  | |  .___.'  |  .-.  ||  |\\    |");
-			System.out.println("		  |  '--'  /   `'  '-'  ' |      |  |      |(_|  |   |  |   |  | |  |       |  | |  ||  | \\   | ");
-			System.out.println("		  `-------'      `-----'  `------'  `------'  `--'   `--'   `--' `--'        `--' `--'`--'  `--'" );
-			
-			Main.printLine();
-			Main.printOption("로그인", "회원가입", "아이디 찾기", "비밀번호 재설정");
-			String input = scan.nextLine().trim();
-	
-			if (input.equals("1")) {
-				Login.login();
-			} else if (input.equals("2")) {
-				Join.join();
-			} else if (input.equals("3")) {
-				FindId.findId();
-			} else if (input.equals("4")) {
-				ResetPw.resetPw();
-			} else {
-				return;
-			}
-		}
+		System.out.println();
+		System.out.println("                  _ .-') _                                           _   .-')      _ (`-.    ('-.         .-') _ ");
+		System.out.println("		 ( (  OO) )                                         ( '.( OO )_   ( (OO  )  ( OO ).-.    ( OO ) )" );
+		System.out.println("		  \\     .'_  .-'),-----.  ,--.      ,--.      ,-.-') ,--.   ,--.)_.`     \\ / . --. /,--./ ,--,'");
+		System.out.println("		  ,`'--..._)( OO'  .-.  ' |  |.-')  |  |.-')  |  |OO)|   `.'   |(__...--''  | \\-.  \\ |   \\ |  |\\ ");
+		System.out.println("		  |  |  \\  '/   |  | |  | |  | OO ) |  | OO ) |  |  \\|         | |  /  | |.-'-'  |  ||    \\|  | )");
+		System.out.println("		  |  |   ' |\\_) |  |\\|  | |  |`-' | |  |`-' | |  |(_/|  |'.'|  | |  |_.' | \\| |_.'  ||  .     |/");
+		System.out.println("		  |  |   / :  \\ |  | |  |(|  '---.'(|  '---.',|  |_.'|  |   |  | |  .___.'  |  .-.  ||  |\\    |");
+		System.out.println("		  |  '--'  /   `'  '-'  ' |      |  |      |(_|  |   |  |   |  | |  |       |  | |  ||  | \\   | ");
+		System.out.println("		  `-------'      `-----'  `------'  `------'  `--'   `--'   `--' `--'        `--' `--'`--'  `--'" );
+		
+		Data.allLoad();
+		MemberMenu.menu();
 		
 		/*
 		
