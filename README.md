@@ -1,7 +1,9 @@
-🖥️ 자바 코딩을 하는 재미와 함께 즐거운 추석을 맞이하세요! 💻✨
+# 🎉 추석 특별 이벤트! 🎉
+### 🖥️ 자바 코딩을 하는 재미와 함께 즐거운 추석을 맞이하세요! 💻✨
+
 🌟 토이 점메추 프로젝트에 참여하여 자바 코딩의 즐거움을 느껴보세요! 🚀
 
-🔥 이벤트 내용:
+**🔥 이벤트 내용:**
 1️⃣ 메뉴 추천 기능
 사용자들이 메뉴를 추천받고 싶을 때, 다양한 선택지로 메뉴를 추천받을 수 있습니다!
 🎲 랜덤 메뉴 추천: 메뉴 1개를 무작위로 추천받아보세요.
@@ -27,9 +29,9 @@
 
 ⚡ 이외에도 다양한 코딩 챌린지와 미션을 통해 즐거운 개발 경험을 얻어보세요! 🚀
 
-📅 기간: 10월 3일까지
+**📅 기간: 10월 3일까지**
 
-👉 참여 방법:
+### 👉 참여 방법:
 Revolving Menu 프로젝트를 Pull request하세요.
 https://docs.google.com/document/d/1s8SqC1kin5GsZLS7AL-NDj6tF9r2PGFgilaCiBfZBjQ/edit?usp=sharing
 https://docs.google.com/document/d/1-MTrBgtMFA3crE47Vu3LtZzvdCIuA5Kfn6x4M4DY-8Y/edit#heading=h.d1o6p73766k1
