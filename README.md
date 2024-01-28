@@ -30,6 +30,7 @@
 <br>⚡ 이외에도 다양한 코딩 챌린지와 미션을 통해 즐거운 개발 경험을 얻어보세요! 🚀
 
 **📅 기간: 10월 3일까지**
+<br><br>
 
 ### 👉 참여 방법:
 Revolving Menu 프로젝트를 Pull request하세요.
@@ -37,6 +38,5 @@ Revolving Menu 프로젝트를 Pull request하세요.
 <br>https://docs.google.com/document/d/1-MTrBgtMFA3crE47Vu3LtZzvdCIuA5Kfn6x4M4DY-8Y/edit#heading=h.d1o6p73766k1
 <br>기능명세서와 요구분석서를 참고하여 완벽한 코드를 작성하세요!
 <br>코드를 작성하고 Push Commit을 통해 기여하세요.
-
 <br>훌륭한 코드로 특별한 추석을 즐기세요!
 <br>즐겁고 유익한 추석을 보내시길 바랍니다! 🌕✨
